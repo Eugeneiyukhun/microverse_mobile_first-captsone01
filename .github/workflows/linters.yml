@@ -1,0 +1,46 @@
+name: Linters
+
+on: pull_request
+
+jobs:
+  lighthouse:
+    name: Lighthouse
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+      - name: Setup Lighthouse
+        run: |
+          npm install -g @lhci/cli@0.12.x
+          npm install -g lighthouse@9.6.7
+      - name: Lighthouse Report
+        run: |
+          lhci autorun --upload.target=temporary-public-storage --collect.staticDistDir=.
+  webhint:
+    name: Webhint
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+      - name: Setup Webhint
+        run: |
+          npm install --save-dev hint@7.x
+      - name: Webhint Report
+        run: npx hint .
+  stylelint:
+    name: Stylelint
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+      - name: Setup Stylelint
+        run: |
+          npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+      - name: Stylelint Report
+        run: npx stylelint "**/*.{css,scss}"
