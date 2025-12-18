@@ -66,7 +66,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #293bd7;  
+  color: #293bd7;
 }
 
 .menu-toggle {
@@ -106,7 +106,7 @@ body {
 }
 
 .hero-title {
-  color: #091E42;
+  color: #091e42;
   font-family: poppins, sans-serif;
   font-size: 56px;
   font-weight: 800;
@@ -146,7 +146,7 @@ body {
 }
 
 .social-link {
-  color: #505F79;
+  color: #505f79;
   font-size: 1.25rem;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -164,6 +164,7 @@ body {
 }
 
 /* Responsive Design */
+
 /* Tablet Breakpoint(768px and above) */
 
 @media screen and (min-width: 768px) {
@@ -247,10 +248,10 @@ body {
     width: 3rem;
     height: 3rem;
   }
-
 }
 
 /* Desktop Breakpoint (1024px and above) */
+
 @media screen and (min-width: 1024px) {
   .header {
     padding: 1.5rem 15%;
@@ -277,15 +278,16 @@ body {
     font-size: 5rem;
   }
 
+  /* stylelint-disable-next-line no-eol-whitespace */
   .hero-description {
     font-size: 20px;
     max-width: 90%;
     width: 90%;
   }
-
 }
 
 /* Large Desktop Breakpoint (1440px and above) */
+
 @media screen and (min-width: 1440px) {
   .header {
     padding: 2rem 20%;
@@ -316,13 +318,13 @@ a:focus {
 }
 
 /* Ensure minimum mobile screen width */
+
 @media screen and (max-width: 374px) {
   .hero {
     padding: 5rem 5% 1.5rem;
   }
-  
+
   .hero-title {
     font-size: 2.5rem;
   }
-
 }
